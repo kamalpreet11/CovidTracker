@@ -1,0 +1,899 @@
+{
+  "errors": [],
+  "get": "history",
+  "parameters": {
+    "country": "usa",
+    "day": "2020-06-02"
+  },
+  "response": [
+    {
+      "cases": {
+        "1M_pop": "5665",
+        "active": 1146293,
+        "critical": 16939,
+        "new": "+14945",
+        "recovered": 620129,
+        "total": 1874268
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "326",
+        "new": "+921",
+        "total": 107846
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55745",
+        "total": 18443243
+      },
+      "time": "2020-06-02T20:45:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5663",
+        "active": 1146945,
+        "critical": 16939,
+        "new": "+14330",
+        "recovered": 618867,
+        "total": 1873653
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "326",
+        "new": "+916",
+        "total": 107841
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55634",
+        "total": 18406453
+      },
+      "time": "2020-06-02T20:30:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5661",
+        "active": 1146359,
+        "critical": 16949,
+        "new": "+13686",
+        "recovered": 618867,
+        "total": 1873009
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "326",
+        "new": "+858",
+        "total": 107783
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55614",
+        "total": 18399716
+      },
+      "time": "2020-06-02T20:15:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5659",
+        "active": 1145766,
+        "critical": 16949,
+        "new": "+13073",
+        "recovered": 618867,
+        "total": 1872396
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "326",
+        "new": "+838",
+        "total": 107763
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55382",
+        "total": 18323004
+      },
+      "time": "2020-06-02T20:00:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5653",
+        "active": 1143751,
+        "critical": 16949,
+        "new": "+10915",
+        "recovered": 618867,
+        "total": 1870238
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+695",
+        "total": 107620
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55382",
+        "total": 18323004
+      },
+      "time": "2020-06-02T19:45:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5653",
+        "active": 1143749,
+        "critical": 16949,
+        "new": "+10913",
+        "recovered": 618867,
+        "total": 1870236
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+695",
+        "total": 107620
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55382",
+        "total": 18323004
+      },
+      "time": "2020-06-02T19:30:05+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5650",
+        "active": 1142902,
+        "critical": 16949,
+        "new": "+10066",
+        "recovered": 618867,
+        "total": 1869389
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+695",
+        "total": 107620
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55382",
+        "total": 18323004
+      },
+      "time": "2020-06-02T19:15:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5650",
+        "active": 1142740,
+        "critical": 16949,
+        "new": "+9867",
+        "recovered": 618867,
+        "total": 1869190
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+658",
+        "total": 107583
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55382",
+        "total": 18323004
+      },
+      "time": "2020-06-02T19:00:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5649",
+        "active": 1142682,
+        "critical": 16949,
+        "new": "+9806",
+        "recovered": 618867,
+        "total": 1869129
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+655",
+        "total": 107580
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55382",
+        "total": 18323004
+      },
+      "time": "2020-06-02T18:30:09+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5648",
+        "active": 1142323,
+        "critical": 16949,
+        "new": "+9398",
+        "recovered": 618864,
+        "total": 1868721
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+609",
+        "total": 107534
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55347",
+        "total": 18311607
+      },
+      "time": "2020-06-02T18:15:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5648",
+        "active": 1142106,
+        "critical": 16949,
+        "new": "+9177",
+        "recovered": 618864,
+        "total": 1868500
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+605",
+        "total": 107530
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55347",
+        "total": 18311607
+      },
+      "time": "2020-06-02T18:00:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5644",
+        "active": 1142554,
+        "critical": 16949,
+        "new": "+7965",
+        "recovered": 617266,
+        "total": 1867288
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+543",
+        "total": 107468
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55281",
+        "total": 18289496
+      },
+      "time": "2020-06-02T17:45:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5642",
+        "active": 1142445,
+        "critical": 16949,
+        "new": "+7404",
+        "recovered": 616856,
+        "total": 1866727
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+501",
+        "total": 107426
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55092",
+        "total": 18227114
+      },
+      "time": "2020-06-02T17:30:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5642",
+        "active": 1142424,
+        "critical": 16949,
+        "new": "+7327",
+        "recovered": 616856,
+        "total": 1866650
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "325",
+        "new": "+445",
+        "total": 107370
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55092",
+        "total": 18227114
+      },
+      "time": "2020-06-02T17:15:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5640",
+        "active": 1141694,
+        "critical": 16949,
+        "new": "+6579",
+        "recovered": 616856,
+        "total": 1865902
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+427",
+        "total": 107352
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55092",
+        "total": 18227114
+      },
+      "time": "2020-06-02T17:00:08+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5640",
+        "active": 1141660,
+        "critical": 16949,
+        "new": "+6543",
+        "recovered": 616856,
+        "total": 1865866
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+425",
+        "total": 107350
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55092",
+        "total": 18227114
+      },
+      "time": "2020-06-02T16:45:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5639",
+        "active": 1141394,
+        "critical": 16949,
+        "new": "+6181",
+        "recovered": 616796,
+        "total": 1865504
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+389",
+        "total": 107314
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55053",
+        "total": 18214101
+      },
+      "time": "2020-06-02T16:30:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5638",
+        "active": 1141373,
+        "critical": 16949,
+        "new": "+6136",
+        "recovered": 616796,
+        "total": 1865459
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+365",
+        "total": 107290
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "55053",
+        "total": 18214101
+      },
+      "time": "2020-06-02T16:15:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5631",
+        "active": 1140025,
+        "critical": 16949,
+        "new": "+3556",
+        "recovered": 615719,
+        "total": 1862879
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+210",
+        "total": 107135
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54988",
+        "total": 18192664
+      },
+      "time": "2020-06-02T16:00:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5629",
+        "active": 1139561,
+        "critical": 16949,
+        "new": "+3024",
+        "recovered": 615718,
+        "total": 1862347
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+143",
+        "total": 107068
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54957",
+        "total": 18182361
+      },
+      "time": "2020-06-02T15:45:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5628",
+        "active": 1139382,
+        "critical": 16949,
+        "new": "+2774",
+        "recovered": 615654,
+        "total": 1862097
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+136",
+        "total": 107061
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54957",
+        "total": 18182361
+      },
+      "time": "2020-06-02T15:30:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5628",
+        "active": 1139381,
+        "critical": 16949,
+        "new": "+2773",
+        "recovered": 615654,
+        "total": 1862096
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "324",
+        "new": "+136",
+        "total": 107061
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54930",
+        "total": 18173575
+      },
+      "time": "2020-06-02T15:00:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5626",
+        "active": 1138828,
+        "critical": 16949,
+        "new": "+2151",
+        "recovered": 615654,
+        "total": 1861474
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+67",
+        "total": 106992
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54898",
+        "total": 18162929
+      },
+      "time": "2020-06-02T14:45:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5626",
+        "active": 1138830,
+        "critical": 16949,
+        "new": "+2151",
+        "recovered": 615654,
+        "total": 1861474
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+65",
+        "total": 106990
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54898",
+        "total": 18162929
+      },
+      "time": "2020-06-02T14:30:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5624",
+        "active": 1138027,
+        "critical": 16949,
+        "new": "+1303",
+        "recovered": 615654,
+        "total": 1860626
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+20",
+        "total": 106945
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54898",
+        "total": 18162929
+      },
+      "time": "2020-06-02T14:15:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5624",
+        "active": 1138015,
+        "critical": 16949,
+        "new": "+1290",
+        "recovered": 615654,
+        "total": 1860613
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+19",
+        "total": 106944
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54875",
+        "total": 18155363
+      },
+      "time": "2020-06-02T13:45:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5621",
+        "active": 1137190,
+        "critical": 16949,
+        "new": "+449",
+        "recovered": 615653,
+        "total": 1859772
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+4",
+        "total": 106929
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54873",
+        "total": 18154510
+      },
+      "time": "2020-06-02T13:00:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5621",
+        "active": 1137417,
+        "critical": 16949,
+        "new": "+449",
+        "recovered": 615426,
+        "total": 1859772
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+4",
+        "total": 106929
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54873",
+        "total": 18154510
+      },
+      "time": "2020-06-02T12:30:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5621",
+        "active": 1137356,
+        "critical": 16949,
+        "new": "+386",
+        "recovered": 615426,
+        "total": 1859709
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+2",
+        "total": 106927
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54873",
+        "total": 18154510
+      },
+      "time": "2020-06-02T12:15:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5621",
+        "active": 1137340,
+        "critical": 16949,
+        "new": "+370",
+        "recovered": 615426,
+        "total": 1859693
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+2",
+        "total": 106927
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54872",
+        "total": 18154215
+      },
+      "time": "2020-06-02T12:00:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5621",
+        "active": 1137244,
+        "critical": 16949,
+        "new": "+274",
+        "recovered": 615426,
+        "total": 1859597
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+2",
+        "total": 106927
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54872",
+        "total": 18154215
+      },
+      "time": "2020-06-02T10:00:07+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5620",
+        "active": 1137020,
+        "critical": 16949,
+        "new": "+38",
+        "recovered": 615416,
+        "total": 1859361
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": null,
+        "total": 106925
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54859",
+        "total": 18150053
+      },
+      "time": "2020-06-02T07:00:06+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5620",
+        "active": 1136982,
+        "critical": 16949,
+        "new": null,
+        "recovered": 615416,
+        "total": 1859323
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": null,
+        "total": 106925
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54859",
+        "total": 18150053
+      },
+      "time": "2020-06-02T06:15:05+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5620",
+        "active": 1136979,
+        "critical": 16949,
+        "new": "+22145",
+        "recovered": 615411,
+        "total": 1859315
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+730",
+        "total": 106925
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54859",
+        "total": 18150053
+      },
+      "time": "2020-06-02T00:45:05+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5619",
+        "active": 1136910,
+        "critical": 16949,
+        "new": "+22004",
+        "recovered": 615341,
+        "total": 1859174
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+728",
+        "total": 106923
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54859",
+        "total": 18150053
+      },
+      "time": "2020-06-02T00:30:05+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5620",
+        "active": 1137200,
+        "critical": 16949,
+        "new": "+22281",
+        "recovered": 615328,
+        "total": 1859451
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+728",
+        "total": 106923
+      },
+      "population": 330848770,
+      "tests": {
+        "1M_pop": "54859",
+        "total": 18150053
+      },
+      "time": "2020-06-02T00:15:05+00:00"
+    },
+    {
+      "cases": {
+        "1M_pop": "5619",
+        "active": 1136777,
+        "critical": 16947,
+        "new": "+21829",
+        "recovered": 615301,
+        "total": 1858999
+      },
+      "continent": "North-America",
+      "country": "USA",
+      "day": "2020-06-02",
+      "deaths": {
+        "1M_pop": "323",
+        "new": "+726",
+        "total": 106921
+      },
+      "population": 330843477,
+      "tests": {
+        "1M_pop": "54856",
+        "total": 18148683
+      },
+      "time": "2020-06-02T00:00:05+00:00"
+    }
+  ],
+  "results": 37
+}
