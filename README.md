@@ -12,3 +12,11 @@ https://rapidapi.com/api-sports/api/covid-193/
 If you do not want to set up API, enable "USE_MOCK" property in [build.gradle](app/build.gradle)
 
 `buildConfigField "boolean", "USE_MOCK", "true"`
+
+# ScreenShots
+<div align="center">
+    <img src="/screenshots/world.png" width="240px"</img> 
+    <img src="/screenshots/select_country.png" width="240px"</img>
+    <img src="/screenshots/country_statistics.png" width="240px"</img>
+    <img src="/screenshots/historical_data.png" width="240px"</img>
+</div>
