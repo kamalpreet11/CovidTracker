@@ -14,10 +14,9 @@ import com.singh.covidtracker.presentation.viewModel.impl.CovidStatisticsViewMod
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
-    val covidStatisticsViewModel: CovidStatisticsViewModel = hiltViewModel<CovidStatisticsViewModelImpl>()
     NavHost(navController = navController, startDestination = Routes.Splash.route) {
         composable(route = Routes.Splash.route) {
-            SplashScreen(covidStatisticsViewModel) {
+            SplashScreen() {
                 navController.navigate(Routes.CovidStatistics.route) {
                     popUpTo(Routes.Splash.route) {
                         inclusive = true
@@ -26,12 +25,12 @@ fun Navigation() {
             }
         }
         composable(route = Routes.CovidStatistics.route) {
-            CovidStatScreen(covidStatisticsViewModel) {
+            CovidStatScreen() {
                 navController.navigate(Routes.SelectCountry.route)
             }
         }
         composable(route = Routes.SelectCountry.route) {
-            SelectCountryScreen(covidStatisticsViewModel) {
+            SelectCountryScreen {
                 navController.popBackStack(Routes.CovidStatistics.route, false)
             }
         }

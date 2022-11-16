@@ -14,6 +14,7 @@ import com.singh.covidtracker.utils.ERROR_NO_COUNTRIES
 import com.singh.covidtracker.utils.State
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
+import okhttp3.internal.platform.android.AndroidLogHandler.reportError
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -26,23 +27,27 @@ class CountryRepoImpl @Inject constructor(
 ) : CountryRepo {
 
     override val state =
-        MutableStateFlow<State<List<Country>>>(State.Loading())
+        MutableStateFlow<State<List<Country>>>(State.Unknown())
 
     override suspend fun initialize() {
         withContext(dispatcher) {
-            try {
-                fetchCountriesList()
-            } catch (e: Exception) {
-                if (e is CancellationException) {
-                    throw e
+            if (state.value is State.Unknown) {
+                withContext(dispatcher) {
+                    try {
+                        fetchCountriesList()
+                    } catch (e: Exception) {
+                        if (e is CancellationException) {
+                            throw e
+                        }
+                        reportError(
+                            ServiceError(
+                                ERROR_INTERNAL,
+                                e.message,
+                                e
+                            )
+                        )
+                    }
                 }
-                reportError(
-                    ServiceError(
-                        ERROR_INTERNAL,
-                        e.message,
-                        e
-                    )
-                )
             }
         }
     }

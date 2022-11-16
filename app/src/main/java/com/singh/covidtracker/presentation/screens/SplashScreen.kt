@@ -18,15 +18,17 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.singh.covidtracker.R
 import com.singh.covidtracker.presentation.components.RoundedCard
 import com.singh.covidtracker.presentation.viewModel.CovidStatisticsViewModel
+import com.singh.covidtracker.presentation.viewModel.SnapShotViewModel
 import com.singh.covidtracker.presentation.viewModel.impl.CovidStatisticsViewModelImpl
+import com.singh.covidtracker.presentation.viewModel.impl.SnapShotViewModelImpl
 import com.singh.covidtracker.utils.State
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun SplashScreen(
-    covidStatisticsViewModel: CovidStatisticsViewModel,
     finishSplash: () -> Unit
 ) {
+    val snapShotViewModel : SnapShotViewModel = hiltViewModel<SnapShotViewModelImpl>()
     val updatedFinishSplash by rememberUpdatedState(newValue = finishSplash)
     BaseScreen {
         Box(
@@ -34,7 +36,7 @@ fun SplashScreen(
             contentAlignment = Alignment.Center
         ) {
             val covidData =
-                covidStatisticsViewModel.selectedCountryCovidStatistic.collectAsStateWithLifecycle()
+                snapShotViewModel.appDataReady.collectAsStateWithLifecycle()
             var dataLoading by remember {
                 mutableStateOf(true)
             }

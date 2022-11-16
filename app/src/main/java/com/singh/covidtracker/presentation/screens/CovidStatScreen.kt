@@ -19,6 +19,7 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.singh.covidtracker.R
@@ -27,6 +28,7 @@ import com.singh.covidtracker.domain.model.CovidHistoryGraphData
 import com.singh.covidtracker.domain.model.CovidStatistic
 import com.singh.covidtracker.presentation.components.*
 import com.singh.covidtracker.presentation.viewModel.CovidStatisticsViewModel
+import com.singh.covidtracker.presentation.viewModel.impl.CovidStatisticsViewModelImpl
 import com.singh.covidtracker.ui.WindowState
 import com.singh.covidtracker.ui.theme.*
 import com.singh.covidtracker.utils.State
@@ -35,9 +37,9 @@ import java.util.*
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun CovidStatScreen(
-    covidStatisticsViewModel: CovidStatisticsViewModel,
     search: () -> Unit
 ) {
+    val covidStatisticsViewModel: CovidStatisticsViewModel = hiltViewModel<CovidStatisticsViewModelImpl>()
     val updatedSearch by rememberUpdatedState(newValue = search)
     val currentSelectedCovidStats =
         covidStatisticsViewModel.selectedCountryCovidStatistic.collectAsStateWithLifecycle()
@@ -61,7 +63,7 @@ fun CovidStatScreen(
                             RoundedCornerShape(12.dp)
                         )
                         .clickable {
-                            covidStatisticsViewModel.selectCountry(null)
+                            covidStatisticsViewModel.showWorldStatistics()
                         },
                     painter = painterResource(id = R.drawable.covid_ribbon),
                     contentDescription = stringResource(id = R.string.app_name),

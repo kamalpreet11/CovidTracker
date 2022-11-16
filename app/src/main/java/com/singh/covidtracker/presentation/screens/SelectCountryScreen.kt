@@ -26,21 +26,21 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.singh.covidtracker.R
 import com.singh.covidtracker.domain.model.Country
 import com.singh.covidtracker.presentation.components.CountryItem
-import com.singh.covidtracker.presentation.viewModel.CovidStatisticsViewModel
-import com.singh.covidtracker.presentation.viewModel.impl.CovidStatisticsViewModelImpl
+import com.singh.covidtracker.presentation.viewModel.SelectCountryViewModel
+import com.singh.covidtracker.presentation.viewModel.impl.SelectCountryViewModelImpl
 import com.singh.covidtracker.utils.State
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable
 fun SelectCountryScreen(
-    covidStatisticsViewModel: CovidStatisticsViewModel,
     onExit: () -> Unit
 ) {
+    val selectCountryViewModel : SelectCountryViewModel = hiltViewModel<SelectCountryViewModelImpl>()
     val updatedOnExit by rememberUpdatedState(newValue = onExit)
     var searchQuery by rememberSaveable {
         mutableStateOf("")
     }
-    val countriesResponse = covidStatisticsViewModel.countries.collectAsStateWithLifecycle()
+    val countriesResponse = selectCountryViewModel.countries.collectAsStateWithLifecycle()
     val countries by remember {
         derivedStateOf {
             when (countriesResponse.value) {
@@ -123,7 +123,7 @@ fun SelectCountryScreen(
                 countries
             ) { country ->
                 CountryItem(country = country, modifier = Modifier.clickable {
-                    covidStatisticsViewModel.selectCountry(country)
+                    selectCountryViewModel.selectCountry(country)
                     updatedOnExit()
                 })
             }

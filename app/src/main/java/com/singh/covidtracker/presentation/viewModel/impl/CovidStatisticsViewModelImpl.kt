@@ -1,6 +1,7 @@
 package com.singh.covidtracker.presentation.viewModel.impl
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,6 +12,7 @@ import com.singh.covidtracker.domain.model.CovidStatistic
 import com.singh.covidtracker.domain.repo.CountryRepo
 import com.singh.covidtracker.domain.repo.CovidHistoryRepo
 import com.singh.covidtracker.domain.repo.CovidStatisticsRepo
+import com.singh.covidtracker.domain.repo.SelectedCountryRepo
 import com.singh.covidtracker.domain.useCase.CountryCovidStatisticsUseCase
 import com.singh.covidtracker.domain.useCase.WorldCovidStatisticsUseCase
 import com.singh.covidtracker.presentation.viewModel.CovidStatisticsViewModel
@@ -29,6 +31,7 @@ class CovidStatisticsViewModelImpl @Inject constructor(
     worldCovidStatisticsUseCase: WorldCovidStatisticsUseCase,
     countryRepo: CountryRepo,
     covidStatisticsRepo: CovidStatisticsRepo,
+    private val selectedCountryRepo: SelectedCountryRepo,
     covidStatisticsUseCase: CountryCovidStatisticsUseCase,
     private val covidHistoryRepo: CovidHistoryRepo,
     private val savedStateHandle: SavedStateHandle
@@ -48,7 +51,16 @@ class CovidStatisticsViewModelImpl @Inject constructor(
         }
     }
 
-    private val _selectedCountry = savedStateHandle.getStateFlow<Country?>(SELECTED_COUNTRY, null)
+//    private val _savedStateCountry = savedStateHandle.getStateFlow<Country?>(SELECTED_COUNTRY, null)
+//    private val _selectedCountry = combine(
+//        _savedStateCountry,
+//        selectedCountryRepo.selectedCountry
+//    ) { saved, selected ->
+//        Log.d("KAMAL", "Saved: $saved, selected: $selected")
+//        saved
+//    }
+
+    private val _selectedCountry = selectedCountryRepo.selectedCountry
 
     override val selectedCountryCovidStatistic: StateFlow<State<Pair<Country, CovidStatistic?>>> =
         combine(
@@ -76,12 +88,10 @@ class CovidStatisticsViewModelImpl @Inject constructor(
 
     override val countries: StateFlow<State<List<Country>>> = countryRepo.state
 
-    override fun selectCountry(country: Country?) {
-        savedStateHandle[SELECTED_COUNTRY] = country
-    }
-
     override fun showWorldStatistics() {
-        selectCountry(null)
+        viewModelScope.launch {
+            selectedCountryRepo.selectCountry(null)
+        }
     }
 
     override fun fetchCovidStatistics(country: Country): StateFlow<State<CovidHistoryGraphData>> {

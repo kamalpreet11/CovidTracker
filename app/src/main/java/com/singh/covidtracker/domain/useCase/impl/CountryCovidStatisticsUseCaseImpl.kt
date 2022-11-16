@@ -14,8 +14,8 @@ import kotlinx.coroutines.flow.combine
 import javax.inject.Inject
 
 class CountryCovidStatisticsUseCaseImpl @Inject constructor(
-    private val countryRepo: CountryRepo,
-    private val covidStatisticsRepo: CovidStatisticsRepo,
+    countryRepo: CountryRepo,
+    covidStatisticsRepo: CovidStatisticsRepo,
 ) : CountryCovidStatisticsUseCase {
 
     override val countryCovidStatistics: Flow<State<Map<Country, CovidStatistic?>>> =

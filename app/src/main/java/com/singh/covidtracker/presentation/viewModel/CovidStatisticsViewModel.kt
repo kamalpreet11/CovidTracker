@@ -12,8 +12,6 @@ interface CovidStatisticsViewModel {
 
     val countries : StateFlow<State<List<Country>>>
 
-    fun selectCountry(country: Country?)
-
     fun showWorldStatistics()
 
     fun fetchCovidStatistics(country: Country) : StateFlow<State<CovidHistoryGraphData>>

@@ -13,8 +13,11 @@ import com.singh.covidtracker.domain.repo.CovidStatisticsRepo
 import com.singh.covidtracker.utils.ERROR_INTERNAL
 import com.singh.covidtracker.utils.ERROR_NO_STATISTICS
 import com.singh.covidtracker.utils.State
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -27,23 +30,28 @@ class CovidStatisticsRepoImpl @Inject constructor(
 ) : CovidStatisticsRepo {
 
     override val state =
-        MutableStateFlow<State<Map<String, CovidStatistic>>>(State.Loading())
+        MutableStateFlow<State<Map<String, CovidStatistic>>>(State.Unknown())
 
     override suspend fun initialize() {
         withContext(dispatcher) {
-            try {
-                fetchCovidStatistics()
-            } catch (e: Exception) {
-                if (e is CancellationException) {
-                    throw e
+            if (state.value is State.Unknown) {
+                withContext(dispatcher) {
+                    state.emit(State.Loading())
+                    try {
+                        fetchCovidStatistics()
+                    } catch (e: Exception) {
+                        if (e is CancellationException) {
+                            throw e
+                        }
+                        reportError(
+                            ServiceError(
+                                ERROR_INTERNAL,
+                                e.message,
+                                e
+                            )
+                        )
+                    }
                 }
-                reportError(
-                    ServiceError(
-                        ERROR_INTERNAL,
-                        e.message,
-                        e
-                    )
-                )
             }
         }
     }
