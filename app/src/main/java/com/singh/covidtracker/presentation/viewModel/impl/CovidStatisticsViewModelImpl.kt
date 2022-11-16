@@ -1,7 +1,6 @@
 package com.singh.covidtracker.presentation.viewModel.impl
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -49,18 +48,18 @@ class CovidStatisticsViewModelImpl @Inject constructor(
         viewModelScope.launch {
             covidStatisticsRepo.initialize()
         }
+
+        viewModelScope.launch {
+            selectedCountryRepo.selectedCountry
+                .collect { country ->
+                    country?.let {
+                        savedStateHandle[SELECTED_COUNTRY] = it
+                    }
+                }
+        }
     }
 
-//    private val _savedStateCountry = savedStateHandle.getStateFlow<Country?>(SELECTED_COUNTRY, null)
-//    private val _selectedCountry = combine(
-//        _savedStateCountry,
-//        selectedCountryRepo.selectedCountry
-//    ) { saved, selected ->
-//        Log.d("KAMAL", "Saved: $saved, selected: $selected")
-//        saved
-//    }
-
-    private val _selectedCountry = selectedCountryRepo.selectedCountry
+    private val _selectedCountry = savedStateHandle.getStateFlow<Country?>(SELECTED_COUNTRY, null)
 
     override val selectedCountryCovidStatistic: StateFlow<State<Pair<Country, CovidStatistic?>>> =
         combine(
@@ -90,6 +89,7 @@ class CovidStatisticsViewModelImpl @Inject constructor(
 
     override fun showWorldStatistics() {
         viewModelScope.launch {
+            savedStateHandle[SELECTED_COUNTRY] = null
             selectedCountryRepo.selectCountry(null)
         }
     }
