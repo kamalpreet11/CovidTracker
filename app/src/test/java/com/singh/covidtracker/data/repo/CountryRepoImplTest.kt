@@ -9,9 +9,7 @@ import com.singh.covidtracker.data.dto.DTOCountryList
 import com.singh.covidtracker.data.network.UriEncoder
 import com.singh.covidtracker.utils.ERROR_INTERNAL
 import com.singh.covidtracker.utils.ERROR_NO_COUNTRIES
-import io.mockk.coEvery
-import io.mockk.every
-import io.mockk.mockk
+import io.mockk.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -173,5 +171,41 @@ class CountryRepoImplTest : BaseTest() {
         Truth.assertThat((countryRepo.state.value as com.singh.covidtracker.utils.State.Error).throwable).isInstanceOf(ServiceError::class.java)
         val error = (countryRepo.state.value as com.singh.covidtracker.utils.State.Error).throwable
         Truth.assertThat((error as ServiceError).code).isEqualTo(ERROR_INTERNAL)
+    }
+
+    @Test
+    fun getCountries_dual_initialization() {
+
+        val mockResponseCountries = mockk<Response<DTOCountryList>>()
+
+        every { mockResponseCountries.isSuccessful } returns true
+        every { mockResponseCountries.body() } returns DTOCountryList(
+            "get", 1, mutableListOf<String>().apply {
+                add("test")
+            }
+        )
+
+        coEvery { mockServiceAPICountries.getCountries() } returns mockResponseCountries
+
+        val countryRepo = CountryRepoImpl(
+            mockkApplication,
+            mockServiceAPICountries,
+            mockUriEncoder,
+            Dispatchers.Main
+        ).apply {
+            runTest { initialize() }
+        }
+
+        Truth.assertThat(countryRepo.state).isNotNull()
+        Truth.assertThat(countryRepo.state.value).isNotNull()
+        Truth.assertThat(countryRepo.state.value).isInstanceOf(com.singh.covidtracker.utils.State.Success::class.java)
+        val response = countryRepo.state.value as com.singh.covidtracker.utils.State.Success
+        Truth.assertThat(response.result).isNotEmpty()
+        Truth.assertThat(response.result[0].name).isEqualTo("test")
+
+        runTest {
+            countryRepo.initialize()
+        }
+        coVerify(exactly = 1) { mockServiceAPICountries.getCountries() }
     }
 }
