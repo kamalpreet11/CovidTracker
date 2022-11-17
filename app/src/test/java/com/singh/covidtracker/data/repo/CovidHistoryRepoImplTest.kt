@@ -30,6 +30,7 @@ class CovidHistoryRepoImplTest {
     fun setUp() {
         every { mockDateFormatter.getTime(any()) } returns Date()
         every { mockDateFormatter.getDayString(any()) } returns "2022-11-08"
+        every { mockDateFormatter.getTimeString(any()) } returns "2022-11-08"
     }
 
     @After
