@@ -22,6 +22,12 @@ class SelectCountryViewModelImpl @Inject constructor(
         private const val SELECTED_COUNTRY = "selectedCountry"
     }
 
+    init {
+        viewModelScope.launch {
+            countryRepo.initialize()
+        }
+    }
+
     override val countries: StateFlow<State<List<Country>>> = countryRepo.state
 
     override fun selectCountry(country: Country?) {
