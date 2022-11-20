@@ -4,4 +4,6 @@ sealed class Routes(val route: String) {
     object Splash : Routes("splash")
     object CovidStatistics : Routes("covidStats")
     object SelectCountry : Routes("selectCountry")
+    object WorldStatistics : Routes("worldStatistics")
+    object MainLanding : Routes("mainLanding")
 }

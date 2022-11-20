@@ -9,4 +9,6 @@
     <string name="cases">Cases History</string>
     <string name="recovered">Recovered</string>
     <string name="deaths">Deaths History</string>
+    <string name="world_tab">World</string>
+    <string name="countries_tab">Countries</string>
 </resources>
