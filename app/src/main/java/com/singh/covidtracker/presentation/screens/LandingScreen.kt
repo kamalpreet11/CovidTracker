@@ -19,6 +19,9 @@ import com.singh.covidtracker.R
 import com.singh.covidtracker.presentation.Routes
 import com.singh.covidtracker.presentation.model.BottomNavigationItem
 import com.singh.covidtracker.presentation.navigation.LandingNavigationGraph
+import com.singh.covidtracker.ui.theme.Green500
+import com.singh.covidtracker.ui.theme.Purple200
+import com.singh.covidtracker.ui.theme.Purple500
 
 @Composable
 fun LandingScreen() {
@@ -66,6 +69,7 @@ fun BottomNavigationBar(
     val backStackEntry = navController.currentBackStackEntryAsState()
     BottomNavigation(
         elevation = 5.dp,
+        backgroundColor = Purple500,
     ) {
         items.forEach { item ->
             val selected = item.route.route == backStackEntry.value?.destination?.route
@@ -84,8 +88,8 @@ fun BottomNavigationBar(
                         )
                     }
                 },
-                selectedContentColor = MaterialTheme.colors.secondary,
-                unselectedContentColor = MaterialTheme.colors.secondaryVariant
+                selectedContentColor = MaterialTheme.colors.primary,
+                unselectedContentColor = MaterialTheme.colors.primaryVariant
             )
         }
     }

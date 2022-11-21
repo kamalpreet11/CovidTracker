@@ -17,14 +17,14 @@ fun CovidNewCasesCard(
     modifier: Modifier = Modifier,
     covidCases: CovidCases?,
 ) {
-    RoundedCard(
+    Column(
         modifier = modifier,
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = stringResource(id = R.string.new_covid_cases),
-            style = MaterialTheme.typography.subtitle1,
+            style = MaterialTheme.typography.h1,
         )
         Text(
             text = covidCases?.new ?: "-",

@@ -42,7 +42,7 @@ private val ColorPalette = Colors(
     background = Purple200,
     onBackground = Green200,
 
-    surface = Green500,
+    surface = Green200,
     onSurface = Charcoal,
 
     error = CovidBrightRed,

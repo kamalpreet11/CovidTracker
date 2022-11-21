@@ -5,4 +5,7 @@
     <color name="charcoal">#FF262626</color>
     <color name="light_grey_200">#FFEEEEEE</color>
     <color name="light_grey_500">#FFDEDEDE</color>
+    <color name="green_500">#FF6AD7C7</color>
+    <color name="green_200">#FFE2F5F4</color>
+    <color name="purple_200">#FFE5DAFF</color>
 </resources>

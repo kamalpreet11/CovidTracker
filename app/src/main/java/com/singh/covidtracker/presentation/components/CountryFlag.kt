@@ -62,7 +62,7 @@ fun CountryFlag(
                         size
                     )
                 ),
-            previewPlaceholder = R.drawable.generic_earth,
+            previewPlaceholder = R.drawable.world,
             imageModel = { country.flag },
             imageOptions = ImageOptions(
                 contentDescription = country.name,

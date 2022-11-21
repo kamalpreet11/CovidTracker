@@ -5,7 +5,7 @@
     <string name="world">World</string>
     <string name="covid_statistics">Covid Statistics</string>
     <string name="select_country">Select Country</string>
-    <string name="new_covid_cases">New</string>
+    <string name="new_covid_cases">New Cases</string>
     <string name="cases">Cases History</string>
     <string name="recovered">Recovered</string>
     <string name="deaths">Deaths History</string>

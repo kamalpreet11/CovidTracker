@@ -47,37 +47,39 @@ fun WorldCovidStatScreen() {
                 val covidStatistic =
                     (worldStatistics.value as State.Success<CovidStatistic>).result
 
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .verticalScroll(rememberScrollState()),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Image(
-                        modifier = Modifier.fillMaxSize(0.35f),
-                        painter = painterResource(id = R.drawable.covid_ribbon),
-                        contentDescription = "",
-                        contentScale = ContentScale.Fit
-                    )
-                    Text(
-                        text = buildString {
-                            append(stringResource(id = R.string.world))
-                            append(" ")
-                            append(stringResource(id = R.string.covid_statistics))
-                        },
-                        style = MaterialTheme.typography.h3
-                    )
-                    CovidNewCasesCard(
+                Banner(modifier = Modifier.fillMaxWidth()) {
+                    Column(
                         modifier = Modifier
-                            .padding(8.dp)
                             .fillMaxWidth(),
-                        covidCases = covidStatistic.cases
-                    )
-                    CovidProgressStatCard(
-                        modifier = Modifier.padding(8.dp),
-                        covidStatistic = covidStatistic
-                    )
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Image(
+                            modifier = Modifier.fillMaxSize(0.25f),
+                            painter = painterResource(id = R.drawable.covid_ribbon),
+                            contentDescription = "",
+                            contentScale = ContentScale.Fit
+                        )
+                        Text(
+                            text = buildString {
+                                append(stringResource(id = R.string.world))
+                                append(" ")
+                                append(stringResource(id = R.string.covid_statistics))
+                            },
+                            style = MaterialTheme.typography.h3
+                        )
+                        CovidNewCasesCard(
+                            modifier = Modifier
+                                .padding(8.dp)
+                                .fillMaxWidth(),
+                            covidCases = covidStatistic.cases
+                        )
+                    }
                 }
+
+                CovidProgressStatCard(
+                    modifier = Modifier.padding(8.dp),
+                    covidStatistic = covidStatistic
+                )
             }
             is State.Error -> ErrorBox(
                 Modifier.fillMaxWidth(),

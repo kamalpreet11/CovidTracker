@@ -49,11 +49,11 @@ fun InfoProgressBar(
         ) {
             Text(
                 text = label,
-                style = MaterialTheme.typography.subtitle1,
+                style = MaterialTheme.typography.body1,
             )
             Text(
                 text = info,
-                style = MaterialTheme.typography.caption,
+                style = MaterialTheme.typography.subtitle1,
             )
         }
         Spacer(modifier = Modifier.padding(top = 4.dp))

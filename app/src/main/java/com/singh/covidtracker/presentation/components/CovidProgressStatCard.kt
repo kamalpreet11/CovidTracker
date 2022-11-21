@@ -1,5 +1,6 @@
 package com.singh.covidtracker.presentation.components
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -17,6 +18,7 @@ import com.singh.covidtracker.domain.model.CovidTests
 import com.singh.covidtracker.ui.theme.CovidBrightRed
 import com.singh.covidtracker.ui.theme.CovidBrightYellow
 import com.singh.covidtracker.ui.theme.CovidMutedRed
+import com.singh.covidtracker.ui.theme.Purple500
 import java.util.*
 
 @Composable
@@ -26,8 +28,8 @@ fun CovidProgressStatCard(
 ) {
     val spacing = 18.dp
 
-    RoundedCard(
-        modifier = modifier
+    Column(
+        modifier = modifier.padding(16.dp),
     ) {
 
         val total = covidStatistic.population ?: 1
@@ -45,7 +47,7 @@ fun CovidProgressStatCard(
             progress = covidStatistic.cases?.total ?: 1,
             label = "Cases",
             info = covidStatistic.cases?.total?.formatToCount() ?: "",
-//            progressColor = CovidBrightRed
+            progressColor = Purple500
         )
         Spacer(modifier = Modifier.padding(top = spacing))
 
@@ -54,7 +56,7 @@ fun CovidProgressStatCard(
             progress = covidStatistic.cases?.recovered ?: 1,
             label = "Recovered",
             info = covidStatistic.cases?.recovered?.formatToCount() ?: "",
-//            progressColor = Color.Green
+            progressColor = Purple500
         )
         Spacer(modifier = Modifier.padding(top = spacing))
 
@@ -63,7 +65,7 @@ fun CovidProgressStatCard(
             progress = covidStatistic.cases?.active ?: 1,
             label = "Active",
             info = covidStatistic.cases?.active?.formatToCount() ?: "",
-//            progressColor = CovidBrightYellow
+            progressColor = Purple500
         )
     }
 }
