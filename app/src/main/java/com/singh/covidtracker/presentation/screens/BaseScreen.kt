@@ -3,16 +3,16 @@ package com.singh.covidtracker.presentation.screens
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.tooling.preview.Preview
 import com.singh.covidtracker.ui.linearGradient
-import com.singh.covidtracker.ui.theme.Charcoal
-import com.singh.covidtracker.ui.theme.CovidBrightYellow
-import com.singh.covidtracker.ui.theme.CovidMutedRed
+import com.singh.covidtracker.ui.theme.LightGrey200
+import com.singh.covidtracker.ui.theme.LightGrey500
 
 @Composable
 fun BaseScreen(
@@ -26,19 +26,26 @@ fun BaseScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colors.background)
-//                .background(
-//                    brush = Brush.linearGradient(
-//                        0.0f to CovidBrightYellow,
-//                        0.2f to CovidMutedRed,
-//                        0.35f to Charcoal,
-//                        angleInDegrees = 115.0f
-//                    )
-//                )
+                .background(
+                    brush = Brush.linearGradient(
+                        0.0f to LightGrey200,
+                        0.5f to LightGrey500,
+                        1.0f to LightGrey200,
+                        angleInDegrees = 90.0f
+                    )
+                )
             ,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             content()
         }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewBaseScreen() {
+    BaseScreen {
+        Text("this is base screen")
     }
 }

@@ -23,10 +23,10 @@ fun LandingNavigationGraph(navHostController: NavHostController) {
                 navHostController.navigate(Routes.SelectCountry.route)
             }
         }
-        composable(route = Routes.SelectCountry.route) {
-            SelectCountryScreen {
-                navHostController.popBackStack(Routes.CovidStatistics.route, false)
-            }
-        }
+//        composable(route = Routes.SelectCountry.route) {
+//            SelectCountryScreen {
+//                navHostController.popBackStack()
+//            }
+//        }
     }
 }

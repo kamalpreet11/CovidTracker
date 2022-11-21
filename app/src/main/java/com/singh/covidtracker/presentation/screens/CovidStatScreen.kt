@@ -47,44 +47,29 @@ fun CovidStatScreen(
     BaseScreen(
         modifier = Modifier
     ) {
-        TopAppBar(
-            backgroundColor = MaterialTheme.colors.background,
-        ) {
-            Row(
-                modifier = Modifier.fillMaxSize(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-
-                Image(
-                    modifier = Modifier
-                        .size(56.dp)
-                        .clip(
-                            RoundedCornerShape(12.dp)
-                        )
-                        .clickable {
-                            covidStatisticsViewModel.showWorldStatistics()
-                        },
-                    painter = painterResource(id = R.drawable.covid_ribbon),
-                    contentDescription = stringResource(id = R.string.app_name),
-                    contentScale = ContentScale.Inside,
-                )
-
-                Image(
-                    modifier = Modifier
-                        .size(56.dp)
-                        .clip(
-                            RoundedCornerShape(12.dp)
-                        )
-                        .clickable {
-                            updatedSearch()
-                        },
-                    painter = painterResource(id = R.drawable.search),
-                    contentDescription = "Search",
-                    contentScale = ContentScale.Inside,
-                )
-            }
-        }
+//        TopAppBar(
+//            backgroundColor = MaterialTheme.colors.background,
+//        ) {
+//            Row(
+//                modifier = Modifier.fillMaxSize(),
+//                verticalAlignment = Alignment.CenterVertically,
+//                horizontalArrangement = Arrangement.SpaceBetween
+//            ) {
+//                Image(
+//                    modifier = Modifier
+//                        .size(56.dp)
+//                        .clip(
+//                            RoundedCornerShape(12.dp)
+//                        )
+//                        .clickable {
+//                            updatedSearch()
+//                        },
+//                    painter = painterResource(id = R.drawable.search),
+//                    contentDescription = "Search",
+//                    contentScale = ContentScale.Inside,
+//                )
+//            }
+//        }
         when (currentSelectedCovidStats.value) {
             is State.Success -> {
                 val covidStatistic =
@@ -170,7 +155,7 @@ fun AdaptiveScreenLayout(
                     }
                     else -> ""
                 },
-                graphAccent = CovidBrightRed,
+                graphAccent = Purple500,
                 graphData = when (covidHistory) {
                     is State.Success -> {
                         covidHistory.result.graphData
@@ -198,7 +183,7 @@ fun AdaptiveScreenLayout(
                     }
                     else -> ""
                 },
-                graphAccent = Color.White,
+                graphAccent = Purple200,
                 graphData = when (covidHistory) {
                     is State.Success -> {
                         covidHistory.result.graphData

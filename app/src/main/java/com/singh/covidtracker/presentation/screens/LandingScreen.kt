@@ -1,31 +1,30 @@
 package com.singh.covidtracker.presentation.screens
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.singh.covidtracker.R
 import com.singh.covidtracker.presentation.Routes
 import com.singh.covidtracker.presentation.model.BottomNavigationItem
 import com.singh.covidtracker.presentation.navigation.LandingNavigationGraph
-import com.singh.covidtracker.R
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun LandingScreen() {
     val landingNavHostController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier,
         scaffoldState = scaffoldState,
         bottomBar = {
             BottomNavigationBar(
@@ -47,8 +46,10 @@ fun LandingScreen() {
                 }
             )
         },
-    ) {
-        LandingNavigationGraph(navHostController = landingNavHostController)
+    ) { innerContentPadding ->
+        Box(modifier = Modifier.padding(innerContentPadding)) {
+            LandingNavigationGraph(navHostController = landingNavHostController)
+        }
     }
 }
 
@@ -60,7 +61,7 @@ fun BottomNavigationBar(
 ) {
     val backStackEntry = navController.currentBackStackEntryAsState()
     BottomNavigation(
-        backgroundColor = Color.LightGray
+        elevation = 5.dp,
     ) {
         items.forEach { item ->
             val selected = item.route.route == backStackEntry.value?.destination?.route
@@ -75,10 +76,12 @@ fun BottomNavigationBar(
                         Icon(item.icon, contentDescription = item.label)
                         Text(
                             text = item.label,
-                            style = if (selected) MaterialTheme.typography.h4 else MaterialTheme.typography.caption
+                            style = MaterialTheme.typography.h5
                         )
                     }
-                }
+                },
+                selectedContentColor = MaterialTheme.colors.secondary,
+                unselectedContentColor = MaterialTheme.colors.secondaryVariant
             )
         }
     }

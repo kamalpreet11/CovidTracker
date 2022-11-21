@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.CovidTracker" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/charcoal</item>
-        <item name="android:windowBackground">@color/charcoal</item>
+    <style name="Theme.CovidTracker" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@color/light_grey_200</item>
+        <item name="android:windowBackground">@drawable/window_background</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/covid_ribbon</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 </resources>

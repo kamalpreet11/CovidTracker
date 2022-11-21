@@ -34,7 +34,7 @@ android {
             buildConfigField("String", "API_HOST", localProperties['apiHost'])
         }
         debug {
-            buildConfigField "boolean", "USE_MOCK", "true"
+            buildConfigField "boolean", "USE_MOCK", "false"
             buildConfigField("String", "API_KEY", localProperties['apiKey'])
             buildConfigField("String", "API_HOST", localProperties['apiHost'])
         }

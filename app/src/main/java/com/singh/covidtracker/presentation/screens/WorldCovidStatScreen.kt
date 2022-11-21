@@ -1,11 +1,8 @@
 package com.singh.covidtracker.presentation.screens
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -53,8 +50,23 @@ fun WorldCovidStatScreen() {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
-                        .verticalScroll(rememberScrollState())
+                        .verticalScroll(rememberScrollState()),
+                    horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    Image(
+                        modifier = Modifier.fillMaxSize(0.35f),
+                        painter = painterResource(id = R.drawable.covid_ribbon),
+                        contentDescription = "",
+                        contentScale = ContentScale.Fit
+                    )
+                    Text(
+                        text = buildString {
+                            append(stringResource(id = R.string.world))
+                            append(" ")
+                            append(stringResource(id = R.string.covid_statistics))
+                        },
+                        style = MaterialTheme.typography.h3
+                    )
                     CovidNewCasesCard(
                         modifier = Modifier
                             .padding(8.dp)
